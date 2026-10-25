@@ -7,6 +7,6 @@ node_modules/
 dashboard/dist/
 backend/phishnetra.db
 ml/datasets/
-dist/
-public/
+/dist/
+/public/
 .claude/

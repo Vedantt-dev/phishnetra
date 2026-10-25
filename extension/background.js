@@ -3,7 +3,7 @@
 import { scoreUrl } from "./lib/offline_heuristics.js";
 
 // mode: enforce | monitor. Nothing is scanned until the user accepts the data disclosure (welcome page).
-const DEFAULTS = { apiBase: "__API_BASE__", enabled: true, mode: "enforce", consented: false };
+const DEFAULTS = { apiBase: "https://phishnetra-seven.vercel.app", enabled: true, mode: "enforce", consented: false };
 const CACHE_TTL_MS = 10 * 60 * 1000;
 const API_TIMEOUT_MS = 2500;
 const BYPASS_TTL_MS = 30 * 60 * 1000;

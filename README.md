@@ -17,6 +17,19 @@ Chrome extension ──► FastAPI detection API ──► L1 Reputation & threa
                      React admin console (live feed, explainability, trends)
 ```
 
+## Live demo
+
+| | |
+|---|---|
+| Admin console | **https://phishnetra-seven.vercel.app/dashboard/** (click *Run demo scans*) |
+| Demo phishing pages | https://phishnetra-seven.vercel.app/demo/ |
+| API docs | https://phishnetra-seven.vercel.app/docs |
+| Extension download | https://phishnetra-seven.vercel.app/phishnetra-extension.zip ([install steps](docs/PUBLISHING.md#a-load-unpacked-judges--testers-no-review)) |
+
+The extension talks to the hosted API by default, so nothing needs to run locally. Every push to `main`
+redeploys automatically. On Vercel the scan log lives in per-instance temporary storage, so the dashboard
+starts empty after a cold start; set `PHISHNETRA_DB` to a Postgres URL for durable history.
+
 See **[docs/architecture.md](docs/architecture.md)** for diagrams and design, and
 **[docs/evaluation.md](docs/evaluation.md)** for methodology and results.
 
@@ -60,11 +73,16 @@ immediately. Train on real data for meaningful accuracy — see [Training](#trai
 
 1. Open `chrome://extensions`, enable **Developer mode**.
 2. **Load unpacked** → select the `extension/` folder.
-3. Pin PhishNetra; the popup shows API status (green dot) and the verdict for the current tab.
+3. Accept the data disclosure on the welcome tab, then pin PhishNetra; the popup shows API status
+   (green dot) and the verdict for the current tab.
+4. It uses the hosted API by default; to use your local server, open the popup → Settings → API URL
+   `http://localhost:8000`.
+
+Publishing to the Chrome Web Store / Edge Add-ons: see **[docs/PUBLISHING.md](docs/PUBLISHING.md)**.
 
 ### Try it (safe local demo pages)
 
-Open <http://localhost:8000/demo/> with the extension loaded:
+Open <https://phishnetra-seven.vercel.app/demo/> (or <http://localhost:8000/demo/>) with the extension loaded:
 
 | Page | Expected |
 |---|---|

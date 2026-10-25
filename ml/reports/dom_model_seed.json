@@ -1,0 +1,49 @@
+{
+  "model": "dom_random_forest",
+  "dataset": "seed",
+  "trained_at": "2026-10-25T13:58:21+00:00",
+  "train_rows": 4800,
+  "test": {
+    "n": 1200,
+    "accuracy": 0.9942,
+    "precision": 0.9917,
+    "recall": 0.9967,
+    "f1": 0.9942,
+    "roc_auc": 0.9999,
+    "pr_auc": 0.9999,
+    "false_positive_rate": 0.0083,
+    "confusion_matrix": {
+      "tn": 595,
+      "fp": 5,
+      "fn": 2,
+      "tp": 598
+    }
+  },
+  "feature_importance": {
+    "NoOfEmptyRef": 0.2805,
+    "NoOfSelfRef": 0.1486,
+    "NoOfExternalRef": 0.1219,
+    "HasPasswordField": 0.1129,
+    "DomainTitleMatchScore": 0.0998,
+    "NoOfImage": 0.0486,
+    "HasDescription": 0.0404,
+    "NoOfJS": 0.0224,
+    "HasCopyrightInfo": 0.017,
+    "NoOfCSS": 0.0168,
+    "HasSubmitButton": 0.0168,
+    "URLTitleMatchScore": 0.016,
+    "HasExternalFormSubmit": 0.0112,
+    "LineOfCode": 0.0101,
+    "HasFavicon": 0.0098,
+    "IsResponsive": 0.0068,
+    "NoOfiFrame": 0.0065,
+    "HasSocialNet": 0.0049,
+    "LargestLineLength": 0.0043,
+    "Bank": 0.0015,
+    "Pay": 0.0011,
+    "HasTitle": 0.0006,
+    "HasHiddenFields": 0.0006,
+    "NoOfPopup": 0.0005,
+    "Crypto": 0.0002
+  }
+}

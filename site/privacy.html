@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PhishNetra Privacy Policy</title>
+  <style>
+    :root { --bg: #fcfcfb; --ink: #0b0b0b; --muted: #52514e; --line: #e1e0d9; }
+    @media (prefers-color-scheme: dark) { :root { --bg: #1a1a19; --ink: #f0efec; --muted: #c3c2b7; --line: #2c2c2a; } }
+    body { background: var(--bg); color: var(--ink); font: 16px/1.65 system-ui, -apple-system, "Segoe UI", sans-serif; margin: 0; }
+    main { max-width: 720px; margin: 0 auto; padding: 40px 16px 64px; }
+    h1 { margin-bottom: 0; } h2 { margin-top: 32px; font-size: 19px; }
+    .muted { color: var(--muted); } table { border-collapse: collapse; width: 100%; }
+    td, th { text-align: left; border-bottom: 1px solid var(--line); padding: 8px 6px; vertical-align: top; }
+    a { color: #2a78d6; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>PhishNetra Privacy Policy</h1>
+  <p class="muted">Effective 25 October 2026 · Applies to the PhishNetra browser extension and the PhishNetra web service.</p>
+
+  <h2>Single purpose</h2>
+  <p>PhishNetra detects phishing websites and protects users from them in real time. All data handling described
+    here exists only to serve that purpose.</p>
+
+  <h2>Data the extension sends</h2>
+  <p>Only after you accept the in-extension disclosure, for each web page you open, the extension sends to the
+    PhishNetra analysis server:</p>
+  <table>
+    <tr><th>Data</th><th>Why</th></tr>
+    <tr><td>Page URL</td><td>Reputation, URL machine-learning and look-alike-domain checks</td></tr>
+    <tr><td>Page title and up to 5,000 characters of visible page text</td><td>Detect pages that falsely claim to be a known brand</td></tr>
+    <tr><td>Structural counts (links, forms, password fields, iframes, scripts, images)</td><td>Page-structure phishing model</td></tr>
+    <tr><td>Favicon URL</td><td>Visual brand-impersonation check</td></tr>
+  </table>
+  <p>The extension does <b>not</b> collect form input, passwords, cookies, browsing history, account information,
+    location, or any identifier tied to you. No personal information is sold, shared with advertisers, or used for
+    any purpose other than phishing detection.</p>
+
+  <h2>Data stored on the server</h2>
+  <p>The server stores a scan record (URL, domain, risk score, verdict, explanation, timestamp) to power the
+    PhishNetra dashboard and improve detection. Records on the hosted demo are kept in temporary storage that is
+    cleared automatically when the server restarts. Reports you submit ("report phishing" / "it's safe") update the
+    shared block/allow lists.</p>
+
+  <h2>Third parties</h2>
+  <p>To judge a site the server may query public WHOIS registries for the domain's age and connect to the site to
+    check its TLS certificate. No data about you is included in these lookups. The service is hosted on Vercel.</p>
+
+  <h2>Your choices</h2>
+  <p>You can pause protection, switch to monitor-only mode, or point the extension at your own self-hosted server
+    from the toolbar popup, and uninstall at any time. The project is open source:
+    <a href="https://github.com/Vedantt-dev/phishnetra">github.com/Vedantt-dev/phishnetra</a>.</p>
+
+  <h2>Contact</h2>
+  <p>Questions: open an issue on the GitHub repository above.</p>
+
+  <p class="muted">The use of information received from the extension adheres to the Chrome Web Store User Data
+    Policy, including the Limited Use requirements.</p>
+</main>
+</body>
+</html>

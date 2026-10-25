@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PhishNetra demo pages</title>
+  <style>
+    body { font: 15px/1.6 system-ui, sans-serif; max-width: 720px; margin: 40px auto; padding: 0 16px; color: #0f172a; }
+    code { background: #f1f5f9; padding: 1px 5px; border-radius: 4px; }
+    li { margin: 8px 0; }
+  </style>
+</head>
+<body>
+  <h1>PhishNetra demo pages</h1>
+  <p>Safe, local test pages for demonstrating the extension. Nothing here sends data anywhere.</p>
+  <ul>
+    <li><a href="benign-blog.html">Benign blog post</a> — expect <b>ALLOW</b>.</li>
+    <li><a href="phish-login.html">Cloned "PayPal" login page</a> — expect <b>RESTRICT</b> (credential guard) or <b>BLOCK</b>.</li>
+    <li><a href="phish-wallet.html">Fake crypto-wallet "verification"</a> — expect <b>RESTRICT</b>/<b>BLOCK</b>.</li>
+    <li><a href="http://paypa1-secure-login.xyz/verify/account">Typosquat URL</a> — blocked at the URL stage before the page loads.</li>
+    <li><a href="http://192.168.13.37/chase/login.php?cmd=verify">IP-hosted bank lure</a> — expect <b>WARN</b>/<b>BLOCK</b>.</li>
+  </ul>
+</body>
+</html>

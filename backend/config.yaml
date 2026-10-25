@@ -1,0 +1,44 @@
+# PhishNetra zero-trust policy configuration.
+# Weights are relative; they are renormalised over the layers that produced a score.
+weights:
+  reputation: 0.30
+  url_model: 0.30
+  dom_model: 0.20
+  brand: 0.20
+
+thresholds:
+  warn: 30        # risk >= warn  -> WARN
+  restrict: 45    # risk >= restrict on an unverified domain with a credential form -> RESTRICT
+  block: 75       # risk >= block -> BLOCK
+
+# A decisive-evidence layer at or above this score escalates the final risk to at least its
+# value (a blocklist hit or a homoglyph spoof must not be diluted by benign signals elsewhere).
+# Statistical ML layers are deliberately excluded: alone they can WARN, never BLOCK.
+escalation_floor: 90
+escalation_layers: [reputation, brand]
+
+# Any single layer at or above this score guarantees at least a WARN.
+single_layer_warn: 80
+
+# Corroboration: a strong layer (>= min_layer_score) backed by at least one other layer with
+# real supporting evidence (>= support_score, i.e. above the unknown-domain baseline) lifts the
+# risk to the strong score, + bonus for each additional strong layer.
+corroboration:
+  min_layer_score: 70
+  support_score: 30
+  bonus: 5
+
+cache_ttl_seconds: 900
+
+reputation:
+  whois_enabled: true
+  whois_timeout_seconds: 3          # budget for the post-load (DOM) scan
+  url_stage_budget_seconds: 1.2      # budget before navigation, keeps page loads fast
+  tls_enabled: true
+  tls_timeout_seconds: 3
+  young_domain_days: 30
+  openphish_feed_url: "https://openphish.com/feed.txt"
+  feed_refresh_minutes: 60
+  feed_enabled: false   # enable to periodically pull the OpenPhish community feed
+
+suspicious_tlds: [zip, mov, xyz, top, tk, ml, ga, cf, gq, click, link, work, rest, fit, country, kim, support, review, cam, icu, buzz, live, monster, quest, sbs, cfd]

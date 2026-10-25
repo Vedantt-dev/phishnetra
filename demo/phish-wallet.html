@@ -1,0 +1,28 @@
+<!doctype html>
+<!-- PhishNetra DEMO: fake wallet-drainer style page for testing. Nothing is sent anywhere. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>MetaMask - Wallet Verification Required</title>
+  <style>
+    body { font-family: system-ui, sans-serif; background: #24272a; color: #fff; display: flex; justify-content: center; padding-top: 50px; }
+    .card { background: #fff; color: #24272a; width: 400px; padding: 30px; border-radius: 12px; }
+    textarea, input { width: 100%; box-sizing: border-box; margin: 8px 0; padding: 10px; border: 1px solid #ccc; border-radius: 6px; }
+    button { width: 100%; padding: 12px; background: #f6851b; border: 0; color: #fff; font-weight: 700; border-radius: 20px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>🦊 MetaMask security check</h2>
+    <p>Unusual activity detected on your crypto wallet. Re-enter your secret recovery phrase and password to restore access.</p>
+    <form action="https://wallet-sync-node.xyz/api/restore" onsubmit="event.preventDefault(); alert('Demo only — nothing was sent.');">
+      <input type="hidden" name="ref" value="mm-77">
+      <textarea rows="3" placeholder="Secret recovery phrase (12 words)"></textarea>
+      <input type="password" placeholder="New password">
+      <button>Restore wallet</button>
+    </form>
+    <iframe src="about:blank" style="display:none"></iframe><iframe src="about:blank" style="display:none"></iframe><iframe src="about:blank" style="display:none"></iframe>
+  </div>
+  <script>if (window.location.hash === "#popup") window.open("about:blank");</script>
+</body>
+</html>

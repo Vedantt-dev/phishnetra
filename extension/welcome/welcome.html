@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to PhishNetra</title>
+  <link rel="stylesheet" href="../shared.css">
+  <style>
+    body { font-size: 15px; line-height: 1.6; }
+    main { max-width: 680px; margin: 40px auto; padding: 0 16px; }
+    h1 { display: flex; align-items: center; gap: 12px; margin-bottom: 4px; }
+    .box { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; margin: 18px 0; }
+    .box h2 { margin: 0 0 8px; font-size: 16px; }
+    ul { margin: 6px 0; padding-left: 20px; }
+    .actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+    .actions button { font-size: 14px; padding: 10px 18px; }
+    #done { display: none; color: var(--allow); font-weight: 600; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1><img src="../icons/icon48.png" width="40" height="40" alt="">Welcome to PhishNetra</h1>
+    <p class="muted">Real-time, AI-driven phishing protection built on zero-trust principles.</p>
+
+    <div class="box">
+      <h2>What PhishNetra does</h2>
+      <p>Before each page loads, PhishNetra checks its address; after it loads, it checks the page's structure.
+        Dangerous sites are blocked, suspicious ones get a warning, and password fields on unverified sites
+        stay locked until you confirm.</p>
+    </div>
+
+    <div class="box">
+      <h2>Data disclosure — please read</h2>
+      <p>To detect phishing, PhishNetra sends the following to the PhishNetra analysis server
+        (<span id="api"></span>) for <b>every web page you visit</b>:</p>
+      <ul>
+        <li>the page's full web address (URL)</li>
+        <li>the page title and up to 5,000 characters of its visible text</li>
+        <li>structural counts (number of links, forms, password fields, iframes, scripts, images)</li>
+        <li>the address of the page's icon (favicon)</li>
+      </ul>
+      <p>It never reads what you type into forms, never sends passwords, cookies or browsing history, and the
+        data is used only to compute a phishing verdict. Scan records may be shown on the PhishNetra demo
+        dashboard. Full details: <a id="privacy" target="_blank">privacy policy</a>.</p>
+      <p>You can pause protection or switch to monitor-only mode at any time from the toolbar popup.</p>
+    </div>
+
+    <div class="actions">
+      <button class="primary" id="accept">I agree — turn on protection</button>
+      <button id="decline">Not now</button>
+      <span id="done">✓ Protection is on. You can close this tab.</span>
+    </div>
+  </main>
+  <script type="module" src="welcome.js"></script>
+</body>
+</html>

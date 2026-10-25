@@ -1,0 +1,17 @@
+body { width: 340px; padding: 12px 14px 10px; }
+header { display: flex; align-items: center; gap: 8px; font-size: 15px; margin-bottom: 10px; }
+header .dot { margin-left: auto; width: 9px; height: 9px; border-radius: 50%; background: var(--muted); }
+header .dot.up { background: var(--allow); } header .dot.down { background: var(--block); }
+.summary { display: flex; align-items: center; gap: 12px; padding: 10px; background: var(--surface);
+  border: 1px solid var(--border); border-radius: 10px; margin-bottom: 8px; }
+.gauge { font-size: 26px; font-weight: 800; font-variant-numeric: tabular-nums; min-width: 48px; text-align: center; }
+.host { font-weight: 600; word-break: break-all; }
+.actions { display: flex; gap: 6px; margin: 10px 0 6px; }
+.actions button { flex: 1; }
+details { border-top: 1px solid var(--border); padding-top: 8px; }
+summary { cursor: pointer; color: var(--muted); }
+label { display: block; margin: 8px 0; }
+label input[type=url] { width: 100%; margin-top: 3px; padding: 6px; border-radius: 6px; border: 1px solid var(--border);
+  background: var(--surface); color: var(--text); }
+.row { display: flex; gap: 8px; align-items: center; }
+a { color: var(--accent); margin-left: auto; font-size: 12px; }

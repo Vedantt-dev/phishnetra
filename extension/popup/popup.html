@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../shared.css">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <img src="../icons/icon32.png" alt="" width="22" height="22">
+    <strong>PhishNetra</strong>
+    <span id="api" class="dot" title="API status"></span>
+  </header>
+  <main id="main"><p class="muted">Loading…</p></main>
+  <section class="actions">
+    <button id="rescan">Rescan</button>
+    <button id="report">Report phishing</button>
+    <button id="safe">Mark safe</button>
+  </section>
+  <details id="settings">
+    <summary>Settings</summary>
+    <label>API URL <input id="apiBase" type="url" spellcheck="false"></label>
+    <label class="row"><input id="enabled" type="checkbox"> Protection enabled</label>
+    <label class="row"><input id="enforce" type="checkbox"> Enforce (block / restrict) — off = monitor only</label>
+    <div class="row"><button id="save" class="primary">Save</button><button id="sync">Sync blocklist</button>
+      <a id="dash" target="_blank">Open dashboard ↗</a></div>
+    <p id="settingsMsg" class="muted"></p>
+  </details>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blocked by PhishNetra</title>
+  <link rel="stylesheet" href="../shared.css">
+  <style>
+    body { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px 16px;
+      background: linear-gradient(160deg, #450a0a, #7f1d1d 60%, #991b1b); font-size: 14px; }
+    .card { background: var(--bg); width: 100%; max-width: 620px; border-radius: 16px; padding: 28px; box-shadow: 0 30px 80px #0007; }
+    h1 { margin: 0 0 6px; font-size: 24px; color: var(--block); display: flex; gap: 10px; align-items: center; }
+    .url { font-family: ui-monospace, Menlo, monospace; font-size: 12px; background: var(--surface); border: 1px solid var(--border);
+      padding: 8px 10px; border-radius: 8px; word-break: break-all; margin: 12px 0; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 12px; }
+    @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+    .risk { font-size: 40px; font-weight: 800; color: var(--block); font-variant-numeric: tabular-nums; line-height: 1; }
+    .actions { display: flex; gap: 10px; margin-top: 22px; flex-wrap: wrap; align-items: center; }
+    .actions button { font-size: 14px; padding: 10px 16px; }
+    details { margin-top: 18px; color: var(--muted); }
+    #proceed { background: none; border: none; color: var(--muted); text-decoration: underline; padding: 0; }
+    #proceed:disabled { opacity: .4; cursor: not-allowed; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1><img src="../icons/icon48.png" width="32" height="32" alt="">Dangerous site blocked</h1>
+    <p class="muted">PhishNetra's zero-trust policy stopped this page before it could load, because it is very likely a phishing site built to steal passwords, payment details or personal data.</p>
+    <div class="url" id="url"></div>
+    <div class="grid">
+      <div><div class="muted">Risk score</div><div class="risk" id="risk">—</div><div id="brand" class="muted"></div>
+        <div style="margin-top:12px" id="layers"></div></div>
+      <div><div class="muted">Why it was blocked</div><div id="reasons"></div></div>
+    </div>
+    <div class="actions">
+      <button class="primary" id="safety">Take me to safety</button>
+      <button id="report">Confirm it's phishing</button>
+    </div>
+    <details>
+      <summary>Advanced</summary>
+      <p>If you are certain this site is legitimate you can continue. This override is logged and lasts 30 minutes.</p>
+      <label><input type="checkbox" id="ack"> I understand the risk</label>
+      <p><button id="proceed" disabled>Proceed to the site anyway</button></p>
+    </details>
+  </div>
+  <script type="module" src="blocked.js"></script>
+</body>
+</html>

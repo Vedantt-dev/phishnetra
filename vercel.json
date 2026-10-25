@@ -1,0 +1,24 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "true",
+  "buildCommand": "bash scripts/vercel_build.sh",
+  "outputDirectory": "public",
+  "functions": {
+    "api/index.py": {
+      "maxDuration": 30,
+      "memory": 1024,
+      "includeFiles": "backend/**",
+      "excludeFiles": "{.venv/**,ml/**,dashboard/**,extension/**,docs/**,demo/**,backend/tests/**,**/__pycache__/**}"
+    }
+  },
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/index" },
+    { "source": "/health", "destination": "/api/index" },
+    { "source": "/docs", "destination": "/api/index" },
+    { "source": "/openapi.json", "destination": "/api/index" }
+  ],
+  "redirects": [
+    { "source": "/", "destination": "/dashboard/", "permanent": false }
+  ]
+}
